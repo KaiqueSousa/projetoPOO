@@ -6,7 +6,7 @@ import java.util.Objects;
 public class loja {
     
     private String nome;
-    private String codigo;
+    public String codigo;
     private String endereco;
 
     public loja(String nome, String codigo, String endereco) {

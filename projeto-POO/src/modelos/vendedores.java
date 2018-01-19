@@ -8,8 +8,8 @@ public class vendedores extends funcionarios{
     private float salario;
     private float comissao;
     
-    public vendedores(String nome, String cpf, LocalDate datanasci, String codigo) {
-        super(nome, cpf, datanasci, codigo);
+    public vendedores(String nome, String cpf, LocalDate datanasci, String codigo, String codigoLoja) {
+        super(nome, cpf, datanasci, codigo, codigoLoja);
         this.salario = salario;
         this.comissao = comissao;
     }

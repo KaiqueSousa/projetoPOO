@@ -11,12 +11,14 @@ public class funcionarios {
     private String cpf;
     private LocalDate datanasci;
     private String codigo;
+    public String codigoLoja;
 
-    public funcionarios(String nome, String cpf, LocalDate datanasci, String codigo) {
+    public funcionarios(String nome, String cpf, LocalDate datanasci, String codigo, String codigoLoja) {
         this.nome = nome;
         this.cpf = cpf;
         this.datanasci = datanasci;
         this.codigo = codigo;
+        this.codigoLoja = codigoLoja;
     }
 
     public String getNome() {
