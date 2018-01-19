@@ -1,24 +1,15 @@
-
 package modelos;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
-
-public class funcionarios {
-    
+public class departamentos  {
+   
     private String nome;
-    private String cpf;
-    private LocalDate datanascimento;
-    private char sexo;
-    private String telefone;
+    private String codigo;
 
-    public funcionarios(String nome, String cpf, LocalDate datanascimento, char sexo, String telefone) {
+    public departamentos(String nome, String codigo) {
         this.nome = nome;
-        this.cpf = cpf;
-        this.datanascimento = datanascimento;
-        this.sexo = sexo;
-        this.telefone = telefone;
+        this.codigo = codigo;
     }
 
     public String getNome() {
@@ -29,46 +20,19 @@ public class funcionarios {
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public LocalDate getDatanascimento() {
-        return datanascimento;
-    }
-
-    public void setDatanascimento(LocalDate datanascimento) {
-        this.datanascimento = datanascimento;
-    }
-
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.nome);
-        hash = 37 * hash + Objects.hashCode(this.cpf);
-        hash = 37 * hash + Objects.hashCode(this.datanascimento);
-        hash = 37 * hash + this.sexo;
-        hash = 37 * hash + Objects.hashCode(this.telefone);
+        hash = 11 * hash + Objects.hashCode(this.nome);
+        hash = 11 * hash + Objects.hashCode(this.codigo);
         return hash;
     }
 
@@ -83,20 +47,11 @@ public class funcionarios {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final funcionarios other = (funcionarios) obj;
-        if (this.sexo != other.sexo) {
-            return false;
-        }
+        final departamentos other = (departamentos) obj;
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
-        if (!Objects.equals(this.cpf, other.cpf)) {
-            return false;
-        }
-        if (!Objects.equals(this.telefone, other.telefone)) {
-            return false;
-        }
-        if (!Objects.equals(this.datanascimento, other.datanascimento)) {
+        if (!Objects.equals(this.codigo, other.codigo)) {
             return false;
         }
         return true;
@@ -104,8 +59,9 @@ public class funcionarios {
 
     @Override
     public String toString() {
-        return "funcionarios{" + "nome=" + nome + ", cpf=" + cpf + ", datanascimento=" + datanascimento + ", sexo=" + sexo + ", telefone=" + telefone + '}';
+        return "departamentos{" + "nome=" + nome + ", codigo=" + codigo + '}';
     }
     
     
+
 }
