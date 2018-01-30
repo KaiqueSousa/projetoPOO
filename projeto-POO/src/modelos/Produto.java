@@ -11,12 +11,12 @@ import java.util.Objects;
  *
  * @author caique
  */
-public class produtos {
+public class Produto {
     private String nome;
     private String codigo;
     private float valor;
 
-    public produtos(String nome, String codigo, float valor) {
+    public Produto(String nome, String codigo, float valor) {
         this.nome = nome;
         this.codigo = codigo;
         this.valor = valor;
@@ -66,7 +66,7 @@ public class produtos {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final produtos other = (produtos) obj;
+        final Produto other = (Produto) obj;
         if (Float.floatToIntBits(this.valor) != Float.floatToIntBits(other.valor)) {
             return false;
         }

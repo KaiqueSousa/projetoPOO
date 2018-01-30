@@ -12,13 +12,13 @@ import java.util.Objects;
  *
  * @author caique
  */
-public class dependentes {
+public class Dependente {
     private String nome;
     private String cpf;
     private String parentesco;
     private String codigoFuncionario;
 
-    public dependentes(String nome, String cpf, String parentesco, String codigoFuncionario) {
+    public Dependente(String nome, String cpf, String parentesco, String codigoFuncionario) {
         this.nome = nome;
         this.cpf = cpf;
         this.parentesco = parentesco;
@@ -78,7 +78,7 @@ public class dependentes {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final dependentes other = (dependentes) obj;
+        final Dependente other = (Dependente) obj;
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }

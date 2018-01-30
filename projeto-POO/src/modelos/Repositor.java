@@ -11,14 +11,13 @@ import java.time.LocalDate;
  *
  * @author caique
  */
-public class gerentes extends funcionarios{
+public class Repositor extends Funcionario {
     
     private float salario;
-    
-    public gerentes(String nome, String cpf, LocalDate datanasci, String codigo, String codigoLoja) {
-        super(nome, cpf, datanasci, codigo, codigoLoja);
+
+    public Repositor(String nome, String cpf, LocalDate datanasci, String codigo, String codigoLoja) {
+        super(nome, cpf, datanasci, codigo);
         this.salario = salario;
-        
     }
 
     public float getSalario() {
@@ -28,11 +27,11 @@ public class gerentes extends funcionarios{
     public void setSalario(float salario) {
         this.salario = salario;
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 11 * hash + Float.floatToIntBits(this.salario);
+        hash = 97 * hash + Float.floatToIntBits(this.salario);
         return hash;
     }
 
@@ -47,12 +46,12 @@ public class gerentes extends funcionarios{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final gerentes other = (gerentes) obj;
+        final Repositor other = (Repositor) obj;
         if (Float.floatToIntBits(this.salario) != Float.floatToIntBits(other.salario)) {
             return false;
         }
         return true;
     }
+
     
-     
 }

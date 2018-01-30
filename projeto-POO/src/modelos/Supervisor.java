@@ -4,17 +4,12 @@ package modelos;
 import java.time.LocalDate;
 
 
-public class supervisores extends funcionarios{
+public class Supervisor extends Funcionario{
     
     private float salario;
 
-    public supervisores(String nome, String cpf, LocalDate datanasci, String codigo, String codigoLoja) {
-        super(nome, cpf, datanasci, codigo, codigoLoja);
-        this.salario = salario;
-    }
-
-    public supervisores(float salario, String nome, String cpf, LocalDate datanasci, String codigo, String codigoLoja) {
-        super(nome, cpf, datanasci, codigo, codigoLoja);
+    public Supervisor(float salario, String nome, String cpf, LocalDate datanasci, String codigo, String codigoLoja) {
+        super(nome, cpf, datanasci, codigo);
         this.salario = salario;
     }
 
@@ -44,7 +39,7 @@ public class supervisores extends funcionarios{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final supervisores other = (supervisores) obj;
+        final Supervisor other = (Supervisor) obj;
         if (Float.floatToIntBits(this.salario) != Float.floatToIntBits(other.salario)) {
             return false;
         }

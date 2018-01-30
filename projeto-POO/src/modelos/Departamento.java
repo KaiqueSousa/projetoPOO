@@ -3,12 +3,14 @@ package modelos;
 
 import java.util.Objects;
 
-public class departamentos  {
+public class Departamento  {
    
     private String nome;
     private String codigo;
+    private Supervisor supervisor;
+    private ProdutoDepartamento[] produtos;
 
-    public departamentos(String nome, String codigo) {
+    public Departamento(String nome, String codigo) {
         this.nome = nome;
         this.codigo = codigo;
     }
@@ -48,7 +50,7 @@ public class departamentos  {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final departamentos other = (departamentos) obj;
+        final Departamento other = (Departamento) obj;
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }

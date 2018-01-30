@@ -5,20 +5,18 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 
-public class funcionarios {
+public class Funcionario {
     
     private String nome;
     private String cpf;
     private LocalDate datanasci;
     private String codigo;
-    public String codigoLoja;
 
-    public funcionarios(String nome, String cpf, LocalDate datanasci, String codigo, String codigoLoja) {
+    public Funcionario(String nome, String cpf, LocalDate datanasci, String codigo) {
         this.nome = nome;
         this.cpf = cpf;
         this.datanasci = datanasci;
         this.codigo = codigo;
-        this.codigoLoja = codigoLoja;
     }
 
     public String getNome() {
@@ -74,7 +72,7 @@ public class funcionarios {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final funcionarios other = (funcionarios) obj;
+        final Funcionario other = (Funcionario) obj;
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }

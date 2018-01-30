@@ -3,13 +3,17 @@ package modelos;
 
 import java.util.Objects;
 
-public class loja {
+public class Loja {
     
     private String nome;
     public String codigo;
     private String endereco;
+    private Gerente gerenteLoja; 
+    private DepartamentoLoja[] departamentos;
+    private Funcionario[] funcionarios;
+    
 
-    public loja(String nome, String codigo, String endereco) {
+    public Loja(String nome, String codigo, String endereco) {
         this.nome = nome;
         this.codigo = codigo;
         this.endereco = endereco;
@@ -59,7 +63,7 @@ public class loja {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final loja other = (loja) obj;
+        final Loja other = (Loja) obj;
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
