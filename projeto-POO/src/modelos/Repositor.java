@@ -15,7 +15,7 @@ public class Repositor extends Funcionario {
     
     private float salario;
 
-    public Repositor(String nome, String cpf, LocalDate datanasci, String codigo, String codigoLoja) {
+    public Repositor(String nome, String cpf, LocalDate datanasci, int codigo, String codigoLoja) {
         super(nome, cpf, datanasci, codigo);
         this.salario = salario;
     }

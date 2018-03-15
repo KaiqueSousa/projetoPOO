@@ -15,7 +15,7 @@ public class Gerente extends Funcionario{
     
     private float salario;
     
-    public Gerente(String nome, String cpf, LocalDate datanasci, String codigo, String codigoLoja) {
+    public Gerente(String nome, String cpf, LocalDate datanasci, int codigo, String codigoLoja) {
         super(nome, cpf, datanasci, codigo);
         this.salario = salario;
         

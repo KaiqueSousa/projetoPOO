@@ -10,14 +10,20 @@ public class Funcionario {
     private String nome;
     private String cpf;
     private LocalDate datanasci;
-    private String codigo;
+    private  int codigo;
+    
 
-    public Funcionario(String nome, String cpf, LocalDate datanasci, String codigo) {
+    public Funcionario(String nome, String cpf, LocalDate datanasci, int codigo) {
         this.nome = nome;
         this.cpf = cpf;
         this.datanasci = datanasci;
         this.codigo = codigo;
     }
+
+    public Funcionario() {
+    }
+
+    
 
     public String getNome() {
         return nome;
@@ -43,13 +49,15 @@ public class Funcionario {
         this.datanasci = datanasci;
     }
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
+
+
 
     @Override
     public int hashCode() {
@@ -73,21 +81,21 @@ public class Funcionario {
             return false;
         }
         final Funcionario other = (Funcionario) obj;
+        if (this.codigo != other.codigo) {
+            return false;
+        }
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
         if (!Objects.equals(this.cpf, other.cpf)) {
             return false;
         }
-        if (!Objects.equals(this.codigo, other.codigo)) {
-            return false;
-        }
-        if (!Objects.equals(this.datanasci, other.datanasci)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.datanasci, other.datanasci);
     }
 
+   
+
+    
     @Override
     public String toString() {
         return "funcionarios{" + "nome=" + nome + ", cpf=" + cpf + ", datanasci=" + datanasci + ", codigo=" + codigo + '}';
