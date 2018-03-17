@@ -7,24 +7,26 @@ import java.util.Objects;
 
 public class Funcionario {
     
+    private static int cont;
+    private final int codigo;
     private String nome;
     private String cpf;
     private LocalDate datanasci;
-    private  int codigo;
+    
     
 
-    public Funcionario(String nome, String cpf, LocalDate datanasci, int codigo) {
+    public Funcionario(String nome, String cpf, LocalDate datanasci) {
         this.nome = nome;
         this.cpf = cpf;
         this.datanasci = datanasci;
-        this.codigo = codigo;
+        codigo = ++cont;
     }
 
     public Funcionario() {
+      codigo = ++cont;
     }
 
     
-
     public String getNome() {
         return nome;
     }
@@ -52,11 +54,6 @@ public class Funcionario {
     public int getCodigo() {
         return codigo;
     }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
 
 
     @Override
@@ -93,9 +90,6 @@ public class Funcionario {
         return Objects.equals(this.datanasci, other.datanasci);
     }
 
-   
-
-    
     @Override
     public String toString() {
         return "funcionarios{" + "nome=" + nome + ", cpf=" + cpf + ", datanasci=" + datanasci + ", codigo=" + codigo + '}';

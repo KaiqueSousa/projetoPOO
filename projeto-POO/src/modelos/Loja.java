@@ -1,4 +1,3 @@
-
 package modelos;
 
 import java.util.Objects;
@@ -17,6 +16,10 @@ public class Loja {
         this.nome = nome;
         this.codigo = codigo;
         this.endereco = endereco;
+    }
+
+    public Loja() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getNome() {
