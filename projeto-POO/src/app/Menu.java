@@ -1,14 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package app;
 
 import controle.FuncionarioDao;
+import controle.LojaDao;
 import java.time.LocalDate;
 import java.util.Scanner;
 import modelos.Funcionario;
+import modelos.Loja;
 
 /**
  *
@@ -36,31 +33,37 @@ public class Menu {
             
             System.out.println("--------------------------"); 
             
-            
-
             switch(cont){
                    case 1:
                         System.out.print("Digite o nome do funcionario: ");                       
                         fun.setNome(sc.next());
                         
+                        
                         System.out.print("Digite o CPF: ");
                         fun.setCpf(sc.next());
 
-                        fun.setCodigo(1);
-
                         fun.setDatanasci(LocalDate.now());
                         
-                        dao.criar(fun); 
+                        if(dao.criar(fun)==false){
+                            System.out.println("");
+                            System.out.println("Funcionario já cadastrado!");
+                            System.out.println("");
+                        }else dao.criar(fun); 
+                        
                         
                         break;
-
+                   
                    case 2:
+                       dao.deletar(fun);
+                       
                        
                    case 3:
                        System.out.print("Qual o codigo do funcionario: ");
                        int cod = sc.nextInt();
+                       if(dao.buscar(cod)==null){
+                           System.out.println("Código Invalido!");
+                       }else System.out.println(dao.buscar(cod));
                        
-                       dao.buscar(cod);
 
                    case 4:
                        System.out.println(dao.listar());                        
@@ -68,14 +71,13 @@ public class Menu {
                        
                        
                    case 0:
-                    
-            } 
-    }
-    
+            
+    }   
+}
    
-    
+}
 }
 
-}
+   
     
 
