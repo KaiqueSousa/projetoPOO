@@ -12,7 +12,7 @@ import java.util.List;
  * @author caique
  */
 interface DAO <T> {
-     public void criar (T obj);
+     public boolean criar (T obj);
      public boolean deletar(T obj);
      public Object buscar(int valor);
      public List<T>  listar(); 
