@@ -22,9 +22,13 @@ public class FuncionarioDao implements DAO <Funcionario>{
     }
 
     @Override
-    public boolean deletar(Funcionario obj) {
-       return funcionario.remove(obj);
-             
+    public boolean deletar(Funcionario fun){
+         for(int i = 0; i < funcionario.size(); i++ ){
+             if(funcionario.get(i).getCpf().equals(fun.getCpf())){
+                 funcionario.remove(funcionario.get(i));
+             }
+         }
+         return true;
     }
 
     @Override
@@ -38,11 +42,12 @@ public class FuncionarioDao implements DAO <Funcionario>{
     }
 
     @Override
-    public List<Funcionario> listar() { 
-        for(int i = 0; i< funcionario.size(); i++){
-            funcionario.toString();  
+    public void listar() { 
+        for(Funcionario fun: funcionario){
+            
+            System.out.println(fun.toString());
        }
-       return funcionario;
+  
     }
     
 }

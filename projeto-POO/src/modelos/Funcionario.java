@@ -7,8 +7,8 @@ import java.util.Objects;
 
 public class Funcionario {
     
-    private static int cont;
-    private final int codigo;
+    public static int num;
+    private  int codigo;
     private String nome;
     private String cpf;
     private LocalDate datanasci;
@@ -19,13 +19,15 @@ public class Funcionario {
         this.nome = nome;
         this.cpf = cpf;
         this.datanasci = datanasci;
-        codigo = ++cont;
+       
+        
     }
 
     public Funcionario() {
-      codigo = ++cont;
+        codigo = num++;
     }
 
+    
     
     public String getNome() {
         return nome;
@@ -54,6 +56,11 @@ public class Funcionario {
     public int getCodigo() {
         return codigo;
     }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+    
 
 
     @Override
@@ -94,6 +101,8 @@ public class Funcionario {
     public String toString() {
         return "funcionarios{" + "nome=" + nome + ", cpf=" + cpf + ", datanasci=" + datanasci + ", codigo=" + codigo + '}';
     }
+
+ 
     
     
     

@@ -6,6 +6,7 @@
 package controle;
 
 import java.util.List;
+import modelos.Funcionario;
 
 /**
  *
@@ -13,7 +14,7 @@ import java.util.List;
  */
 interface DAO <T> {
      public boolean criar (T obj);
-     public boolean deletar(T obj);
+     public boolean deletar(Funcionario fun);
      public Object buscar(int valor);
-     public List<T>  listar(); 
+     public void  listar(); 
 }

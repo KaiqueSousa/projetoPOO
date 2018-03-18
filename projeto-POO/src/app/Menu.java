@@ -3,6 +3,8 @@ package app;
 import controle.FuncionarioDao;
 import controle.LojaDao;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import modelos.Funcionario;
 import modelos.Loja;
@@ -14,11 +16,11 @@ import modelos.Loja;
 public class Menu {
     
     public static void main(String[] args){
-        
+
         int cont = 4;
         Scanner sc = new Scanner(System.in);
          
-        Funcionario fun = new Funcionario();     
+         
         FuncionarioDao dao = new FuncionarioDao();
     
         while(cont != 0){
@@ -35,15 +37,17 @@ public class Menu {
             
             switch(cont){
                    case 1:
+                        Funcionario fun = new Funcionario();   
+                       
                         System.out.print("Digite o nome do funcionario: ");                       
-                        fun.setNome(sc.next());
-                        
+                        fun.setNome(sc.next());                        
                         
                         System.out.print("Digite o CPF: ");
                         fun.setCpf(sc.next());
 
                         fun.setDatanasci(LocalDate.now());
                         
+                                              
                         if(dao.criar(fun)==false){
                             System.out.println("");
                             System.out.println("Funcionario já cadastrado!");
@@ -54,7 +58,16 @@ public class Menu {
                         break;
                    
                    case 2:
-                       dao.deletar(fun);
+                       
+                       
+                       Funcionario f = new Funcionario();   
+                       
+                       System.out.print("Digite o CPF: ");
+                       f.setCpf(sc.next());
+                       
+                       dao.deletar(f);
+                       
+                       break;
                        
                        
                    case 3:
@@ -66,7 +79,7 @@ public class Menu {
                        
 
                    case 4:
-                       System.out.println(dao.listar());                        
+                       dao.listar();                        
                        break;
                        
                        
