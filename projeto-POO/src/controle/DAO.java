@@ -5,12 +5,12 @@
  */
 package controle;
 
-import java.util.List;
+
 import modelos.Funcionario;
 
 /**
  *
- * @author caique
+ * @author Caique e Kaique
  */
 interface DAO <T> {
      public boolean criar (T obj);
