@@ -1,7 +1,6 @@
 
 package modelos;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 
@@ -11,11 +10,11 @@ public class Funcionario {
     private  int codigo;
     private String nome;
     private String cpf;
-    private LocalDate datanasci;
+    private String datanasci;
     
     
 
-    public Funcionario(String nome, String cpf, LocalDate datanasci) {
+    public Funcionario(String nome, String cpf, String datanasci) {
         this.nome = nome;
         this.cpf = cpf;
         this.datanasci = datanasci;
@@ -45,11 +44,11 @@ public class Funcionario {
         this.cpf = cpf;
     }
 
-    public LocalDate getDatanasci() {
+    public String getDatanasci() {
         return datanasci;
     }
 
-    public void setDatanasci(LocalDate datanasci) {
+    public void setDatanasci(String datanasci) {
         this.datanasci = datanasci;
     }
 

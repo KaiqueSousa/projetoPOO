@@ -1,14 +1,13 @@
 
 package modelos;
 
-import java.time.LocalDate;
 
 public class Vendedor extends Funcionario{
     
     private float salario;
     private float comissao;
     
-    public Vendedor(String nome, String cpf, LocalDate datanasci, String codigoLoja) {
+    public Vendedor(String nome, String cpf, String datanasci, String codigoLoja) {
         super(nome, cpf, datanasci);
         this.salario = salario;
         this.comissao = comissao;
