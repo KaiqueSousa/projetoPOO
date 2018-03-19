@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.Scanner;
 import modelos.Funcionario;
+import modelos.Usuario;
 
 
 /**
@@ -16,9 +17,26 @@ import modelos.Funcionario;
 public class Menu {
     
     public static void main(String[] args){
-
-        int cont = 4;
+   
         Scanner sc = new Scanner(System.in);
+
+        
+        Usuario user = new Usuario();
+        
+        user.setLogin("user1");
+        user.setSenha("123");
+        
+        System.out.print("Login: ");
+        String login = sc.next();
+        
+        System.out.print("Senha:");
+        String senha = sc.next();
+            
+        if(user.getLogin().equals("user1") && user.getSenha().equals("123")){
+            System.out.println("Logion feito");           
+                   
+        
+        int cont = 4;
          
          
         FuncionarioDao dao = new FuncionarioDao();
@@ -56,7 +74,11 @@ public class Menu {
                             System.out.println("");
                             System.out.println("Funcionario já cadastrado!");
                             System.out.println("");
-                        }else dao.criar(fun); 
+                        }else{
+                            dao.criar(fun);
+                             System.out.println("Funcionario cadastrado!");
+                              System.out.println("-------------------------------");
+                        } 
                         
                         
                         break;
@@ -80,7 +102,7 @@ public class Menu {
                        if(dao.buscar(cod)==null){
                            System.out.println("Código Invalido!");
                        }else System.out.println(dao.buscar(cod));
-                       
+                       break;
 
                    case 4:
                        dao.listar();                        
@@ -91,6 +113,11 @@ public class Menu {
             
     }   
 }
+        }else{
+            System.out.println("Usuario não cadstrado");
+            
+        }
+ 
    
 }
 }

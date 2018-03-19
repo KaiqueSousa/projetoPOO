@@ -17,4 +17,5 @@ interface DAO <T> {
      public boolean deletar(Funcionario fun);
      public Object buscar(int valor);
      public void  listar(); 
+    
 }
