@@ -1,17 +1,17 @@
 package app;
 
 import controle.FuncionarioDao;
-import controle.LojaDao;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 import java.util.Scanner;
 import modelos.Funcionario;
-import modelos.Loja;
+
 
 /**
  *
- * @author caique
+ * @author Caique e Kaíque
  */
 public class Menu {
     
@@ -45,7 +45,11 @@ public class Menu {
                         System.out.print("Digite o CPF: ");
                         fun.setCpf(sc.next());
 
-                        fun.setDatanasci(LocalDate.now());
+                        System.out.println("Digite sua data de nascimento: ");
+                        
+                        String nascimento = sc.next();
+                        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                        fun.setDatanasci(nascimento);
                         
                                               
                         if(dao.criar(fun)==false){
